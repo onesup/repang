@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  started_at: 2013-05-11 15:27:34
+  finished_at: 2013-05-11 15:27:34
+  title: MyString
+  status: MyString
+  livere_code: MyText
+  user_id: 1
+
+two:
+  started_at: 2013-05-11 15:27:34
+  finished_at: 2013-05-11 15:27:34
+  title: MyString
+  status: MyString
+  livere_code: MyText
+  user_id: 1
