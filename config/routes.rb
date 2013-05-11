@@ -1,6 +1,11 @@
 Repang::Application.routes.draw do
   resources :events
   root :to => "events#index"
+  
+  namespace :admin do
+    resources :events do
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
