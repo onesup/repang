@@ -15,8 +15,8 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.started_at %></td>
-    <td><%= event.finished_at %></td>
+    <td><%= time_mid(event.started_at) %></td>
+    <td><%= time_mid(event.finished_at) %></td>
     <td><%= event.title %></td>
     <td><%= event.status %></td>
     <td><%= event.livere_code %></td>
