@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Started at:</b>
-  <%= @event.started_at %>
+  <b>시작일:</b>
+  <%= time_mid(@event.started_at) %>
 </p>
 
 <p>
-  <b>Finished at:</b>
-  <%= @event.finished_at %>
+  <b>종료일:</b>
+  <%= time_mid(@event.finished_at) %>
 </p>
 
 <p>
-  <b>Title:</b>
+  <b>이벤트명:</b>
   <%= @event.title %>
 </p>
 
 <p>
-  <b>Status:</b>
+  <b>이벤트상태:</b>
   <%= @event.status %>
 </p>
 
@@ -25,11 +25,6 @@
   <%= @event.livere_code %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @event.user_id %>
-</p>
 
-
-<%= link_to 'Edit', edit_event_path([:admin, @event]) %> |
-<%= link_to 'Back', admin_events_path %>
+<%= link_to '수정', edit_admin_event_path(@event) %> |
+<%= link_to '목록보기', admin_events_path %>

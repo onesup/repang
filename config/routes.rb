@@ -1,12 +1,14 @@
 Repang::Application.routes.draw do
-  resources :events
+  resources :events, :only => [:index, :show]
+    
   root :to => "events#index"
   
   namespace :admin do
     resources :events do
     end
   end
-
+  match 'admin' => 'admin/events#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -6,7 +6,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :title
       t.string :status
       t.text :livere_code
-      t.integer :user_id
+      t.string :image_url
 
       t.timestamps
     end

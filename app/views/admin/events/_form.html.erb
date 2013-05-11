@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :started_at %><br />
+    <%= f.label :started_at, "시작일" %><br />
     <%= f.datetime_select :started_at %>
   </div>
   <div class="field">
-    <%= f.label :finished_at %><br />
+    <%= f.label :finished_at, "종료일" %><br />
     <%= f.datetime_select :finished_at %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, "이벤트명" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
+    <%= f.label :image_url, "이미지 url" %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :status, "진행상태" %><br />
     <%= f.text_field :status %>
   </div>
   <div class="field">
     <%= f.label :livere_code %><br />
     <%= f.text_area :livere_code %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,13 +1,15 @@
-<h1>Listing events</h1>
+<h1>이벤트 목록</h1>
 
 <table>
   <tr>
-    <th>Started at</th>
-    <th>Finished at</th>
-    <th>Title</th>
-    <th>Status</th>
-    <th>Livere code</th>
-    <th>User</th>
+    <th>
+			<ul>
+				<li class="odd">이벤트 시작일</li>
+				<li class="even">이벤트 종료일</li>
+			</ul>
+		</th>
+    <th>제목</th>
+    <th>진행상황</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,19 +17,20 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= time_mid(event.started_at) %></td>
-    <td><%= time_mid(event.finished_at) %></td>
-    <td><%= event.title %></td>
-    <td><%= event.status %></td>
-    <td><%= event.livere_code %></td>
-    <td><%= event.user_id %></td>
-    <td><%= link_to 'Show', [:admin, event] %></td>
-    <td><%= link_to 'Edit', edit_admin_event_path(event) %></td>
-    <td><%= link_to 'Destroy', [:admin, event], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+			<ul>
+				<li class="odd"><%= link_to time_mid(event.started_at), [:admin, event] %></li>
+				<li class="even"><%= link_to time_mid(event.finished_at), [:admin, event] %></li>
+			</ul>
+		</td>
+    <td><%= link_to event.title, [:admin, event] %></td>
+    <td><%= link_to event.status, [:admin, event] %></td>
+    <td><%= link_to '수정', edit_admin_event_path(event) %></td>
+    <td><%= link_to '삭제', [:admin, event], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Event', new_admin_event_path %>
+<%= link_to '새 이벤트 만들기', new_admin_event_path %>
