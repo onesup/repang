@@ -13,7 +13,9 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:onesup/#{application}.git"
 set :branch, "master"
-
+set :default_environment, {
+      'PATH' => "/home/daul/.rbenv/versions/1.9.3-p392/bin/:$PATH"
+    }
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
