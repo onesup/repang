@@ -8,7 +8,7 @@ stdout_path "#{root}/log/unicorn.out.log"
 listen "/tmp/unicorn.repang.sock"
 worker_processes 2
 timeout 30
- 
+
 before_exec do |server|
-  ENV['BUNDLE_GEMFILE'] = "<%= current_path %>/Gemfile"
+  ENV["BUNDLE_GEMFILE"] = "#{root}/Gemfile"
 end
