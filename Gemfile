@@ -10,7 +10,7 @@ gem 'mysql2'
 gem 'unicorn'
 gem 'capistrano'
 gem "sorcery", :git => "git://github.com/NoamB/sorcery.git"
-
+gem 'simple_form'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

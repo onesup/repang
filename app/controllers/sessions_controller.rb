@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def new
     begin
       if logged_in?
-        redirect_to dashboard_path
+        redirect_to admin_events_path
       end
     rescue ActiveRecord::RecordNotFound
       session[:user_id] = nil

@@ -1,4 +1,6 @@
 Repang::Application.routes.draw do
+  get "dashboard/index"
+
   get "logout"  => "sessions#destroy", :as => "logout"
   get "login"   => "sessions#new", :as => "login"
 
@@ -7,6 +9,8 @@ Repang::Application.routes.draw do
   
   namespace :admin do
     resources :events do
+    end
+    resources :users do
     end
   end
   match 'admin' => 'admin/events#index'
