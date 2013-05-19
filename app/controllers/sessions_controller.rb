@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def new
     begin
       if logged_in?
-        redirect_to admin_events_path
+        redirect_to admin_path
       end
     rescue ActiveRecord::RecordNotFound
       session[:user_id] = nil
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   def create
     user = login(params[:username], params[:password], params[:remember_me])
     if user
-      redirect_to root_path, :notice => "로그인 되었습니다."
+      redirect_to admin_path, :notice => "로그인 되었습니다."
     else
       flash.now.alert = "계정 정보가 잘못 입력되었습니다."
       render "new"
