@@ -1,14 +1,17 @@
 Repang::Application.routes.draw do
+  get "logout"  => "sessions#destroy", :as => "logout"
+  get "login"   => "sessions#new", :as => "login"
+
+  resources :sessions
   resources :events, :only => [:index, :show]
-    
-  root :to => "events#index"
   
   namespace :admin do
     resources :events do
     end
   end
   match 'admin' => 'admin/events#index'
-  
+
+  root :to => "events#index"  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

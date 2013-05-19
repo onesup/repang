@@ -1,4 +1,5 @@
 class Admin::EventsController < ApplicationController
+  before_filter :require_login
   # GET /events
   # GET /events.json
   def index

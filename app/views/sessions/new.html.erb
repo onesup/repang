@@ -1,0 +1,26 @@
+<div class="row">
+	
+	<div class="span6 side-logo">
+		<img src="/assets/logo.png">
+	</div>
+	
+	<div class="span3 login">
+		<h1>로그인</h1>
+	
+		<%= form_tag sessions_path do %>
+		  <div class="field">
+		    <%= label_tag :username, "ID" %>
+		    <%= text_field_tag :username, params[:username], :placeholder => "ID" %>
+		  </div>	
+		  <div class="field">
+		    <%= label_tag :password, "패스워드" %>
+		    <%= password_field_tag :password,nil, :placeholder => "패스워드" %>
+		  </div>
+		  <div class="actions">
+		  	<%= submit_tag "로그인", :class => "btn btn-primary" %>
+		  </div>
+		<% end %>
+	
+	</div>
+
+</div>

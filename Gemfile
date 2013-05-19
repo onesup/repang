@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'mysql2'
 gem 'unicorn'
 gem 'capistrano'
+gem "sorcery", :git => "git://github.com/NoamB/sorcery.git"
 
 # Gems used only for assets and not required
 # in production environments by default.
