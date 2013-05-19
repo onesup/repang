@@ -2,12 +2,6 @@
 class Admin::UsersController < ApplicationController
   before_filter :require_login
   
-  def index
-  end
-
-  def show
-  end
-
   def edit
     @user = current_user
   end
@@ -26,6 +20,4 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def new
-  end
 end

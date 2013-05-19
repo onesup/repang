@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<p><%= notice %></p>
+<h1><%= link_to '관리자 기능 >> ', admin_path %><%= @event.title %></h1>
 
 <p>
   <b>시작일:</b>
@@ -18,11 +19,6 @@
 <p>
   <b>이벤트상태:</b>
   <%= @event.status %>
-</p>
-
-<p>
-  <b>Livere code:</b>
-  <%= @event.livere_code %>
 </p>
 
 

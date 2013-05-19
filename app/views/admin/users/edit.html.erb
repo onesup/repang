@@ -1,5 +1,5 @@
 <div class="signup">
-	<h1 class="title">비번변경</h1>
+	<h1><%= link_to '관리자 기능 >> ', admin_path %>비번변경</h1>
 	<%= simple_form_for([:admin, @user], :html => {:class => 'form-horizontal' }) do |f| %>
 	
 		<%= f.input :username, :label => 'ID', :placeholder => "ID"  %>
