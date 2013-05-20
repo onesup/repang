@@ -8,7 +8,7 @@
 users = User.create(
   [
     { 
-      email: 'admin@moncl.net',
+      email: 'admin@repang.net',
       username: "admin",
       password: "1111"
     }

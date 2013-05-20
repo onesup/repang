@@ -1,4 +1,7 @@
 Repang::Application.routes.draw do
+  resources :competitions
+
+
   match 'admin' => 'admin/dashboard#index', :via => :get, :as => "admin" 
   get "logout"  => "sessions#destroy", :as => "logout"
   get "login"   => "sessions#new", :as => "login"

@@ -5,7 +5,6 @@ class Admin::UsersController < ApplicationController
   def edit
     @user = current_user
   end
-  
   def update
     @user = User.find(params[:id])
 

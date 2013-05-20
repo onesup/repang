@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @competition.user_id %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @competition.event_id %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @competition.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_competition_path(@competition) %> |
+<%= link_to 'Back', competitions_path %>
