@@ -36,26 +36,35 @@
 		</script>
 	</div>
 	<div id="modal_form">
-		<%#= form_for(@user) do |f| %>
-		  <% if @event.errors.any? %>
+		<%= simple_form_for(@user, :html => {:class => 'form-horizontal' }) do |f| %>
+		  <% if @user.errors.any? %>
 		    <div id="error_explanation">
-		      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+		      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this event from being saved:</h2>
 
 		      <ul>
-		      <% @event.errors.full_messages.each do |msg| %>
+		      <% @user.errors.full_messages.each do |msg| %>
 		        <li><%= msg %></li>
 		      <% end %>
 		      </ul>
 		    </div>
 		  <% end %>
-
+			<%= f.association :events, :as => :hidden, input_html: {:value => @event.id} %>
 		  <div class="field">
-		    <%#= f.label :username, "사용자이름" %><br />
-		    <%#= f.input :username %>
+		    <%= f.label :name, "이름" %><br />
+		    <%= f.input :name %>
 		  </div>
+		  <div class="field">
+		    <%= f.label :email, "이메일" %><br />
+		    <%= f.input :email %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :phone, "전화" %><br />
+		    <%= f.input :phone %>
+		  </div>
+			
 		  <div class="actions">
-		    <%#= f.submit %>
+		    <%= f.submit %>
 		  </div>
-		<%# end %>
+		<% end %>
 	</div>
 </div>

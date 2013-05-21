@@ -5,14 +5,14 @@ Repang::Application.routes.draw do
   match 'admin' => 'admin/dashboard#index', :via => :get, :as => "admin" 
   get "logout"  => "sessions#destroy", :as => "logout"
   get "login"   => "sessions#new", :as => "login"
-
+  resources :users, :only => [:create]
   resources :sessions
   resources :events, :only => [:index, :show]
-  
+   
   namespace :admin do
     resources :events do
     end
-    resources :users, :olny => [:edit]
+    resources :users, :only => [:edit]
   end
   
 
