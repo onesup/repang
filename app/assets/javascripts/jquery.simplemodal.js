@@ -1,9 +1,9 @@
 /*
- * SimpleModal 1.4.2 - jQuery Plugin
+ * SimpleModal 1.4.4 - jQuery Plugin
  * http://simplemodal.com/
- * Copyright (c) 2011 Eric Martin
+ * Copyright (c) 2013 Eric Martin
  * Licensed under MIT and GPL
- * Date: Sat, Dec 17 2011 15:35:38 -0800
+ * Date: Sun, Jan 20 2013 15:58:56 -0800
  */
 
 /**
@@ -55,10 +55,10 @@
  *
  * @name SimpleModal
  * @type jQuery
- * @requires jQuery v1.2.4
+ * @requires jQuery v1.3
  * @cat Plugins/Windows and Overlays
  * @author Eric Martin (http://ericmmartin.com)
- * @version 1.4.2
+ * @version 1.4.4
  */
 
 ;(function (factory) {
@@ -73,11 +73,17 @@
 (function ($) {
 	var d = [],
 		doc = $(document),
-		ie6 = $.browser.msie && parseInt($.browser.version) === 6 && typeof window['XMLHttpRequest'] !== 'object',
-		ie7 = $.browser.msie && parseInt($.browser.version) === 7,
-		ieQuirks = null,
+		ua = navigator.userAgent.toLowerCase(),
 		wndw = $(window),
 		w = [];
+
+	var browser = {
+		ieQuirks: null,
+		msie: /msie/.test(ua) && !/opera/.test(ua),
+		opera: /opera/.test(ua)
+	};
+	browser.ie6 = browser.msie && /msie 6./.test(ua) && typeof window['XMLHttpRequest'] !== 'object';
+	browser.ie7 = browser.msie && /msie 7.0/.test(ua);
 
 	/*
 	 * Create and display a modal dialog.
@@ -231,8 +237,8 @@
 				return false;
 			}
 
-			// $.boxModel is undefined if checked earlier
-			ieQuirks = $.browser.msie && !$.boxModel;
+			// $.support.boxModel is undefined if checked earlier
+			browser.ieQuirks = browser.msie && !$.support.boxModel;
 
 			// merge defaults and user options
 			s.o = $.extend({}, $.modal.defaults, options);
@@ -246,7 +252,7 @@
 			// determine how to handle the data based on its type
 			if (typeof data === 'object') {
 				// convert DOM object to a jQuery object
-				data = data instanceof jQuery ? data : $(data);
+				data = data instanceof $ ? data : $(data);
 				s.d.placeholder = false;
 
 				// if the object came from the DOM, keep track of its parent
@@ -299,7 +305,7 @@
 			s.getDimensions();
 
 			// add an iframe to prevent select options from bleeding through
-			if (s.o.modal && ie6) {
+			if (s.o.modal && browser.ie6) {
 				s.d.iframe = $('<iframe src="javascript:false;"></iframe>')
 					.css($.extend(s.o.iframeCss, {
 						display: 'none',
@@ -365,7 +371,7 @@
 			s.d.data.appendTo(s.d.wrap);
 
 			// fix issues with IE
-			if (ie6 || ieQuirks) {
+			if (browser.ie6 || browser.ieQuirks) {
 				s.fixIE();
 			}
 		},
@@ -408,7 +414,7 @@
 				// reposition the dialog
 				s.o.autoResize ? s.setContainerDimensions() : s.o.autoPosition && s.setPosition();
 
-				if (ie6 || ieQuirks) {
+				if (browser.ie6 || browser.ieQuirks) {
 					s.fixIE();
 				}
 				else if (s.o.modal) {
@@ -492,11 +498,9 @@
 			}, 10);
 		},
 		getDimensions: function () {
-			// fix a jQuery/Opera bug with determining the window height
+			// fix a jQuery bug with determining the window height - use innerHeight if available
 			var s = this,
-				h = $.browser.opera && $.browser.version > '9.5' && $.fn.jquery < '1.3'
-						|| $.browser.opera && $.browser.version < '9.5' && $.fn.jquery > '1.2.6'
-				? wndw[0].innerHeight : wndw.height();
+				h = typeof window.innerHeight === 'undefined' ? wndw.height() : window.innerHeight;
 
 			d = [doc.height(), doc.width()];
 			w = [h, wndw.width()];
@@ -538,11 +542,11 @@
 		},
 		setContainerDimensions: function () {
 			var s = this,
-				badIE = ie6 || ie7;
+				badIE = browser.ie6 || browser.ie7;
 
 			// get the dimensions for the container and data
-			var ch = s.d.origHeight ? s.d.origHeight : $.browser.opera ? s.d.container.height() : s.getVal(badIE ? s.d.container[0].currentStyle['height'] : s.d.container.css('height'), 'h'),
-				cw = s.d.origWidth ? s.d.origWidth : $.browser.opera ? s.d.container.width() : s.getVal(badIE ? s.d.container[0].currentStyle['width'] : s.d.container.css('width'), 'w'),
+			var ch = s.d.origHeight ? s.d.origHeight : browser.opera ? s.d.container.height() : s.getVal(badIE ? s.d.container[0].currentStyle['height'] : s.d.container.css('height'), 'h'),
+				cw = s.d.origWidth ? s.d.origWidth : browser.opera ? s.d.container.width() : s.getVal(badIE ? s.d.container[0].currentStyle['width'] : s.d.container.css('width'), 'w'),
 				dh = s.d.data.outerHeight(true), dw = s.d.data.outerWidth(true);
 
 			s.d.origHeight = s.d.origHeight || ch;
@@ -626,13 +630,13 @@
 		/*
 		 * Open the modal dialog elements
 		 * - Note: If you use the onOpen callback, you must "show" the
-		 *			overlay and container elements manually
-		 *		 (the iframe will be handled by SimpleModal)
+		 *         overlay and container elements manually
+		 *         (the iframe will be handled by SimpleModal)
 		 */
 		open: function () {
 			var s = this;
 			// display the iframe
-			s.d.iframe && s.d.iframe.fadeIn();
+			s.d.iframe && s.d.iframe.show();
 
 			if ($.isFunction(s.o.onOpen)) {
 				// execute the onOpen callback
@@ -640,9 +644,9 @@
 			}
 			else {
 				// display the remaining elements
-				s.d.overlay.fadeIn();
-				s.d.container.fadeIn();
-				s.d.data.fadeIn();
+				s.d.overlay.show();
+				s.d.container.show();
+				s.d.data.show();
 			}
 
 			s.o.focus && s.focus();
@@ -689,19 +693,19 @@
 					else {
 						// remove the current and insert the original,
 						// unmodified data back into the DOM
-						s.d.data.fadeOut().remove();
+						s.d.data.hide().remove();
 						ph.replaceWith(s.d.orig);
 					}
 				}
 				else {
 					// otherwise, remove it
-					s.d.data.fadeOut().remove();
+					s.d.data.hide().remove();
 				}
 
 				// remove the remaining elements
-				s.d.container.fadeOut().remove();
-				s.d.overlay.fadeOut();
-				s.d.iframe && s.d.iframe.fadeOut().remove();
+				s.d.container.hide().remove();
+				s.d.overlay.hide();
+				s.d.iframe && s.d.iframe.hide().remove();
 				s.d.overlay.remove();
 
 				// reset the dialog object

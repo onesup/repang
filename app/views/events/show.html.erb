@@ -24,6 +24,7 @@
 		<% end %>
 	</p>
 	<%= link_to '전체 이벤트 목록', events_path %>
+	<a href="#" class="register_button"> Open modal by getting the dom id from href</a>
 	<div id="livereContainer" >
 		<script type="text/javascript">
 			var consumer_seq	= "604"
@@ -35,7 +36,7 @@
 			livereLib.start();
 		</script>
 	</div>
-	<div id="modal_form">
+	<div id="register_form">
 		<%= simple_form_for(@user, :html => {:class => 'form-horizontal' }) do |f| %>
 		  <% if @user.errors.any? %>
 		    <div id="error_explanation">
