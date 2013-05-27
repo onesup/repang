@@ -16,7 +16,8 @@ Repang::Application.routes.draw do
   end
   
 
-  root :to => "events#index"  
+  # root :to => "events#index"  
+  root :to => "events#show", :id => Event.last.id.to_s
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
