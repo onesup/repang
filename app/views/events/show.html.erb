@@ -1,20 +1,9 @@
 <div class="event_contents">
+	<h1><%= @event.title %></h1>
 	<p id="notice"><%= notice %></p>
 	<p>
-	  <b>시작일</b>
-	  <%= time_mid @event.started_at %>
-	</p>
-	<p>
-	  <b>종료일</b>
-	  <%= time_mid @event.finished_at %>
-	</p>
-	<p>
-	  <b>이벤트명:</b>
-	  <%= @event.title %>
-	</p>
-	<p>
-	  <b>진행상태:</b>
-	  <%= @event.status %>
+	  <b>이벤트 기간</b>
+	  <%= time_mid @event.started_at %> ~ <%= time_mid @event.finished_at %>
 	</p>
 	<p>
 		<% unless @event.image_url.empty? %>
@@ -39,6 +28,7 @@
 	</div>
 	
 	<div id="register_form">
+		<a href="#" title="Close" class="modal-close simplemodal-close">x</a>
 		<h2 class="modal_title">이벤트 당첨 시 경품배송을 위해 정확한 정보를 입력해주세요.</h2>
 		<%= simple_form_for(@user, :html => {:class => 'form-horizontal' }) do |f| %>
 		  <% if @user.errors.any? %>
