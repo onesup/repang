@@ -1,11 +1,12 @@
 body{
-	background-color: #000000;
-	background:url(images/sa_bg.png) repeat;
+//	background-color: #000000;
+	//background:url(images/sa_bg.png) repeat;
 	padding:0;
 }
 div.ninesixty{width:960px;}
 p.center{color: #005580; text-align:center;}
 #register_form {display:none;}
+.uneditable-input{width:300px; height: 100px; overflow: scroll;}
 
 /* Overlay */
 #simplemodal-overlay {background-color:#000;}
