@@ -14,7 +14,6 @@
 	</p>
 	<%= link_to '전체 이벤트 목록', events_path %>
 	<a href="#" class="register_button">모달 열기</a>
-	<!-- <a href="#" class="register_button"> Open modal by getting the dom id from href</a> -->
 	<div id="livereContainer" >
 		<script type="text/javascript">
 			var consumer_seq	= "604"
@@ -26,7 +25,6 @@
 			livereLib.start();
 		</script>
 	</div>
-	
 	<div id="register_form">
 		<a href="#" title="Close" class="modal-close simplemodal-close">x</a>
 		<h2 class="modal_title">이벤트 당첨 시 경품배송을 위해 정확한 정보를 입력해주세요.</h2>
@@ -55,34 +53,31 @@
 				<div class="control-group">
 					<div class="controls">
 						<div class="agree_doc">
-<div>
-<strong>
-일반 개인 정보의 수집 및 이용에 대한 동의
-</strong>
-</div>
-<div>
-<strong>수집항목</strong>
-<p>성명, 성별, 주소 등 기타 신상명세</p>
-</div>
-<div>
-
-<strong>수집 및 이용 목적</strong>
-<p>이벤트 진행 과정의 효율성 유지 제고</p>
-</div>
-<div>
-
-<strong>보유 및 이용기간</strong>
-<p>관계 법령의 규정에 따라 귀하의 개인정보를 보존할 의무가 있는 경우가 아니한, 귀하의 개인 정보수집 및 이용목적을 달성할 때까지 귀하의 개인정보를 보유 및 이용합니다.</p>
-</div>
-<div>
-
-<strong>거부권 및 거부에 따른 불이익</strong>
-<p>귀하는 위와 같은 개인정보의 수집, 이용을 거부할 수 있습니다. 다만, 개인정보의 필수적 수집, 이용에 동의하지 않을 경우 이벤트 절차가 진행 될 수 없습니다.</p>
-</div>
+							<div>
+							<strong>
+							일반 개인 정보의 수집 및 이용에 대한 동의
+							</strong>
+							</div>
+							<div>
+							<strong>수집항목</strong>
+							<p>성명, 성별, 주소 등 기타 신상명세</p>
+							</div>
+							<div>
+							<strong>수집 및 이용 목적</strong>
+							<p>이벤트 진행 과정의 효율성 유지 제고</p>
+							</div>
+							<div>
+							<strong>보유 및 이용기간</strong>
+							<p>관계 법령의 규정에 따라 귀하의 개인정보를 보존할 의무가 있는 경우가 아니한, 귀하의 개인 정보수집 및 이용목적을 달성할 때까지 귀하의 개인정보를 보유 및 이용합니다.</p>
+							</div>
+							<div>
+							<strong>거부권 및 거부에 따른 불이익</strong>
+							<p>귀하는 위와 같은 개인정보의 수집, 이용을 거부할 수 있습니다. 다만, 개인정보의 필수적 수집, 이용에 동의하지 않을 경우 이벤트 절차가 진행 될 수 없습니다.</p>
+							</div>
 				</div>
 					</div>
 					<div class="controls">
-						<input type="checkbox" id="agree" name="agree_private_information">
+						<input type="checkbox" id="agree_private_information" name="agree_private_information">
 						<div class="lable_box">
 							<lable for="agree_private_information" class="agree_lable">본인은 회사의 일반 개인정보 수집 및 이용에 관한 설명을 모두 이해하였고, 이에 동의합니다.</lable>
 						</div>
@@ -117,7 +112,7 @@
 				</div>
 					</div>
 					<div class="controls">
-						<input type="checkbox" id="agree" name="agree_private_number">
+						<input type="checkbox" id="agree_private_number" name="agree_private_number">
 							<div class="lable_box">
 								<lable for="agree_private_number">본인은 회사의 고유식별정보 수집 및 이용에 관한 설명을 모두 이해하였고, 모두 동의합니다.</lable>
 						</div>
