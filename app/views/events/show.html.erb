@@ -1,10 +1,12 @@
 <div class="event_contents">
-	<h1><%= @event.title %></h1>
+	<h1 class="event_title"><%= @event.title %></h1>
 	<p id="notice"><%= notice %></p>
-	<p>
-	  <b>이벤트 기간</b>
-	  <%= time_mid @event.started_at %> ~ <%= time_mid @event.finished_at %>
-	</p>
+	<div class="event_info">
+		<p>
+		  <b>이벤트 기간</b>
+		  <%= time_mid @event.started_at %> ~ <%= time_mid @event.finished_at %>
+		</p>
+	</div>
 	<p>
 		<% unless @event.image_url.empty? %>
 			<%= image_tag @event.image_url %>
@@ -12,7 +14,11 @@
 			<span>등록된 이미지가 없습니다.</span>
 		<% end %>
 	</p>
-	<%= link_to '전체 이벤트 목록', events_path %>
+	<%= link_to '>> 리팡 전체 이벤트 보기', events_path, :class => :link_to_list %>
+	<% if @event.banner_image.nil? or @event.bnner_link.nil? %>
+	<% else %>
+		<%= link_to image_tag(@event.banner_image), @event.banner_link %>
+	<% end %>
 	<!-- <a href="#" class="register_button">모달 열기</a> -->
 	<div id="livereContainer" >
 		<script type="text/javascript">
@@ -22,6 +28,11 @@
 			var title = "repang";
 			var refer = "repang.net/events/<%= @event.id %>";
 			livereReply = new Livere( livere_seq , refer , title );
+			<% if @event.facebook_description.nil? %>
+			livereReply.description = "<%= @event.title %>";
+			<% else %>
+			livereReply.description = "<%= @event.facebook_description %>";
+			<% end %>
 			livereLib.start();
 		</script>
 	</div>

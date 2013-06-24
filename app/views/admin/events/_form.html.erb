@@ -24,8 +24,16 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :image_url, "이미지 url" %><br />
+    <%= f.label :facebook_description, "페이스북에 노출되는 이벤트 설명" %><br />
+    <%= f.text_field :facebook_description %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url, "이벤트 이미지 url" %><br />
     <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :thumbnail, "썸네일 이미지 url" %><br />
+    <%= f.text_field :thumbnail %>
   </div>
   <div class="field">
     <%= f.label :status, "진행상태" %><br />

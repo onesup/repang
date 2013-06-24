@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520044156) do
+ActiveRecord::Schema.define(:version => 20130624072409) do
 
   create_table "competitions", :force => true do |t|
     t.integer  "user_id"
@@ -28,8 +28,12 @@ ActiveRecord::Schema.define(:version => 20130520044156) do
     t.string   "status"
     t.text     "livere_code"
     t.string   "image_url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "thumbnail"
+    t.string   "banner_image"
+    t.string   "banner_link"
+    t.string   "facebook_description"
   end
 
   create_table "users", :force => true do |t|
