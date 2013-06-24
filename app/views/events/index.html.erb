@@ -3,7 +3,11 @@
 <table>
 <% @events.each do |event| %>
   <tr>
-		<td colspan="2"><%= image_tag event.thumbnail %></td>
+		<% if event.thumbnail.nil? %>
+			<p><%= event.title %></p>
+		<% else %>
+			<td colspan="2"><%= image_tag event.thumbnail %></td>
+		<% end %>
 	</tr>
 	<tr>
 		<td><%= link_to event.title, event %></td>
