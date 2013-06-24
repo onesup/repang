@@ -36,6 +36,15 @@
     <%= f.text_field :thumbnail %>
   </div>
   <div class="field">
+    <%= f.label :banner_image, "배너 이미지 url (가로:720px, 세로: 120px)" %><br />
+    <%= f.text_field :banner_image %>
+  </div>
+  <div class="field">
+    <%= f.label :banner_link, "배너 링크 url (ex. http://www.naver.com)" %><br />
+    <%= f.text_field :banner_link %>
+  </div>
+	
+  <div class="field">
     <%= f.label :status, "진행상태" %><br />
     <%#= f.text_field :status %>
   </div>

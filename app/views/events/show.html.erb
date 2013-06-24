@@ -15,7 +15,7 @@
 		<% end %>
 	</p>
 	<%= link_to '>> 리팡 전체 이벤트 보기', events_path, :class => :link_to_list %>
-	<% if @event.banner_image.nil? or @event.bnner_link.nil? %>
+	<% if @event.banner_image.nil? or @event.banner_link.nil? %>
 	<% else %>
 		<%= link_to image_tag(@event.banner_image), @event.banner_link %>
 	<% end %>
