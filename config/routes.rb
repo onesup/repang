@@ -17,5 +17,6 @@ Repang::Application.routes.draw do
   
 
   # root :to => "events#index"  
-  root :to => "events#show", :id => Event.last_event.id # Event.last_event
+  # root :to => "events#show", :id => Event.last_event.id # Event.last_event
+  root :to => "events#show", :id => Event.find 6
 end
