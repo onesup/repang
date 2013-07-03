@@ -1,6 +1,6 @@
 <h1>관리자 기능</h1>
 <ul>
 	<li><%= link_to "이벤트 관리", admin_events_path %></li>
-	<li><%= link_to "관리자 비밀번호 수정", edit_admin_user_path(User.last) %></li>
+	<li><%= link_to "관리자 비밀번호 수정", edit_admin_user_path(User.where(:username => "admin").first) %></li>
 	<li><%= link_to "로그아웃", logout_path %></li>
 </ul>

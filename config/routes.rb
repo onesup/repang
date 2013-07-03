@@ -15,7 +15,7 @@ Repang::Application.routes.draw do
         get :latest_event
       end
     end
-    resources :users, :only => [:edit]
+    resources :users
   end
   
   root :to => "events#latest_event"

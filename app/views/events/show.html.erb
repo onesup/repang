@@ -29,9 +29,9 @@
 			var refer = "repang.net/events/<%= @event.id %>";
 			livereReply = new Livere( livere_seq , refer , title );
 			<% if @event.facebook_description.nil? %>
-			livereReply.description = "<%= @event.title %>";
+				livereReply.description = "<%= @event.title %>";
 			<% else %>
-			livereReply.description = "<%= @event.facebook_description %>";
+				livereReply.description = "<%= @event.facebook_description %>";
 			<% end %>
 			livereLib.start();
 		</script>
