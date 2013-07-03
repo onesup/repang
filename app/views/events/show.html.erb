@@ -7,7 +7,7 @@
 		  <%= time_mid @event.started_at %> ~ <%= time_mid @event.finished_at %>
 		</p>
 	</div>
-	<%= link_to image_tag("list_menu.jpg"), events_path, :class => :link_to_list %>
+	<%= link_to image_tag("list_menu33.jpg"), events_path, :class => :link_to_list %>	
 	<div class="event_image">
 		<% unless @event.image_url.empty? %>
 			<%= image_tag @event.image_url %>
@@ -15,7 +15,8 @@
 			<span>등록된 이미지가 없습니다.</span>
 		<% end %>
 	</div>
-	<%= link_to image_tag("list_menu33.jpg"), events_path, :class => :link_to_list %>
+	<%= link_to image_tag("list_menu.jpg"), events_path, :class => :link_to_list %>
+	
 	<% if @event.banner_image.nil? or @event.banner_link.nil? %>
 	<% else %>
 		<%= link_to image_tag(@event.banner_image), @event.banner_link %>
