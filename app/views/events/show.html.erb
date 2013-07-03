@@ -7,14 +7,15 @@
 		  <%= time_mid @event.started_at %> ~ <%= time_mid @event.finished_at %>
 		</p>
 	</div>
-	<p>
+	<%= link_to image_tag("list_menu.jpg"), events_path, :class => :link_to_list %>
+	<div class="event_image">
 		<% unless @event.image_url.empty? %>
 			<%= image_tag @event.image_url %>
 		<% else %>
 			<span>등록된 이미지가 없습니다.</span>
 		<% end %>
-	</p>
-	<%= link_to '>> 리팡 전체 이벤트 보기', events_path, :class => :link_to_list %>
+	</div>
+	<%= link_to image_tag("list_menu33.jpg"), events_path, :class => :link_to_list %>
 	<% if @event.banner_image.nil? or @event.banner_link.nil? %>
 	<% else %>
 		<%= link_to image_tag(@event.banner_image), @event.banner_link %>
@@ -65,25 +66,25 @@
 					<div class="controls">
 						<div class="agree_doc">
 							<div>
-							<strong>
-							일반 개인 정보의 수집 및 이용에 대한 동의
-							</strong>
+								<strong>
+								일반 개인 정보의 수집 및 이용에 대한 동의
+								</strong>
 							</div>
 							<div>
-							<strong>수집항목</strong>
-							<p>성명, 성별, 주소 등 기타 신상명세</p>
+								<strong>수집항목</strong>
+								<p>성명, 성별, 주소 등 기타 신상명세</p>
 							</div>
 							<div>
-							<strong>수집 및 이용 목적</strong>
-							<p>이벤트 진행 과정의 효율성 유지 제고</p>
+								<strong>수집 및 이용 목적</strong>
+								<p>이벤트 진행 과정의 효율성 유지 제고</p>
 							</div>
 							<div>
-							<strong>보유 및 이용기간</strong>
-							<p>관계 법령의 규정에 따라 귀하의 개인정보를 보존할 의무가 있는 경우가 아니한, 귀하의 개인 정보수집 및 이용목적을 달성할 때까지 귀하의 개인정보를 보유 및 이용합니다.</p>
+								<strong>보유 및 이용기간</strong>
+								<p>관계 법령의 규정에 따라 귀하의 개인정보를 보존할 의무가 있는 경우가 아니한, 귀하의 개인 정보수집 및 이용목적을 달성할 때까지 귀하의 개인정보를 보유 및 이용합니다.</p>
 							</div>
 							<div>
-							<strong>거부권 및 거부에 따른 불이익</strong>
-							<p>귀하는 위와 같은 개인정보의 수집, 이용을 거부할 수 있습니다. 다만, 개인정보의 필수적 수집, 이용에 동의하지 않을 경우 이벤트 절차가 진행 될 수 없습니다.</p>
+								<strong>거부권 및 거부에 따른 불이익</strong>
+								<p>귀하는 위와 같은 개인정보의 수집, 이용을 거부할 수 있습니다. 다만, 개인정보의 필수적 수집, 이용에 동의하지 않을 경우 이벤트 절차가 진행 될 수 없습니다.</p>
 							</div>
 				</div>
 					</div>
@@ -100,26 +101,26 @@
 				<div class="control-group">
 					<div class="controls">
 						<div class="agree_doc">
-<div>
-<strong>고유식별정보 수집 및 이용에 대한 동의</strong>
-</div>
-<div>
-<strong>수집항목</strong>
-<p>주민등록번호, 여권번호, 운전면허번호, 외국인 등록번호 등</p>
-</div>
-<div>
-<strong>수집 및 이용 목적</strong>
-<p>이벤트 진행 과정의 효율성 유지 제고</p>
-</div>
-<div>
-<strong>보유 및 이용 기간</strong>
-<p>관계 법령의 규정에 따라 귀하의 고유식별정보를 보존할 의무가 있는 경우가 아니한, 귀하의 고유식별정보 수집 및 이용목적을 달성할 때까지 귀하의 고유식별정보를 보유 및 이용합니다.</p>
-</div>
-<div>
-<strong>거부권 및 거부에 따른 불이익</strong>
-<p>귀하는 위와 같은 고유식별정보의 수집, 이용을 거부할 수 있습니다.
-다만, 고유식별 정보의 필수적 수집 이용에 동의하지 않을 경우 이벤트 절차가 진행되지 않습니다.</p>
-</div>
+							<div>
+								<strong>고유식별정보 수집 및 이용에 대한 동의</strong>
+							</div>
+							<div>
+								<strong>수집항목</strong>
+								<p>주민등록번호, 여권번호, 운전면허번호, 외국인 등록번호 등</p>
+							</div>
+							<div>
+								<strong>수집 및 이용 목적</strong>
+							<p>이벤트 진행 과정의 효율성 유지 제고</p>
+							</div>
+							<div>
+								<strong>보유 및 이용 기간</strong>
+								<p>관계 법령의 규정에 따라 귀하의 고유식별정보를 보존할 의무가 있는 경우가 아니한, 귀하의 고유식별정보 수집 및 이용목적을 달성할 때까지 귀하의 고유식별정보를 보유 및 이용합니다.</p>
+							</div>
+							<div>
+								<strong>거부권 및 거부에 따른 불이익</strong>
+								<p>귀하는 위와 같은 고유식별정보의 수집, 이용을 거부할 수 있습니다.
+								다만, 고유식별 정보의 필수적 수집 이용에 동의하지 않을 경우 이벤트 절차가 진행되지 않습니다.</p>
+							</div>
 				</div>
 					</div>
 					<div class="controls">
