@@ -15,12 +15,13 @@
 			<span>등록된 이미지가 없습니다.</span>
 		<% end %>
 	</div>
+	<div class="banner">
+		<% if @event.banner_image.nil? or @event.banner_link.nil? %>
+		<% else %>
+			<%= link_to image_tag(@event.banner_image), @event.banner_link %>
+		<% end %>
+	</div>
 	<%= link_to image_tag("list_menu.jpg"), events_path, :class => :link_to_list %>
-	
-	<% if @event.banner_image.nil? or @event.banner_link.nil? %>
-	<% else %>
-		<%= link_to image_tag(@event.banner_image), @event.banner_link %>
-	<% end %>
 	<!-- <a href="#" class="register_button">모달 열기</a> -->
 	<div id="livereContainer" >
 		<script type="text/javascript">
