@@ -20,5 +20,9 @@ class EventsController < ApplicationController
       format.json { render json: @event }
     end
   end
+  
+  def latest_event
+    redirect_to event_path(Event.last)
+  end
 
 end

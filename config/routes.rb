@@ -11,12 +11,12 @@ Repang::Application.routes.draw do
    
   namespace :admin do
     resources :events do
+      collection do
+        get :latest_event
+      end
     end
     resources :users, :only => [:edit]
   end
   
-
-  # root :to => "events#index"  
-  # root :to => "events#show", :id => Event.last_event.id # Event.last_event
-  root :to => "events#show", :id => "6"
+  root :to => "events#latest_event"
 end
