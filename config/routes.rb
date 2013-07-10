@@ -13,6 +13,7 @@ Repang::Application.routes.draw do
     resources :events do
       collection do
         get :latest_event
+        get :join_event
       end
     end
     resources :users

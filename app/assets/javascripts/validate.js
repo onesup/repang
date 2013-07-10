@@ -1,9 +1,5 @@
 $().ready(function() {
-	$('#close').click(function (e) {
-		$("#register_form").hide();
-	});
 	$("#new_user").validate({
-
 		rules: {
 			"user[name]": "required",
 			"user[email]": {
