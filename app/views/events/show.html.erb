@@ -23,9 +23,9 @@
 	</div>
 	<%= link_to image_tag("list_menu.jpg"), events_path, :class => :link_to_list %>
 	<div id="register_form">
-		<a href="#" title="Close" class="modal-close simplemodal-close">x</a>
+		<a href="#" id="close" title="Close" class="modal-close simplemodal-close">x</a>
 		<h2 class="modal_title">이벤트 당첨 시 경품배송을 위해 정확한 정보를 입력해주세요.</h2>
-		<a name="register_form">
+		<a name="register_form">		</a>
 		<%= simple_form_for(@user, :html => {:class => 'form-horizontal' }) do |f| %>
 		  <% if @user.errors.any? %>
 		    <div id="error_explanation">
@@ -125,7 +125,6 @@
 				</div>
 		  </div>
 		<% end %>
-		</a>
 	</div>
 	<div id="livereContainer" >
 		<script type="text/javascript">
@@ -144,4 +143,4 @@
 		</script>
 	</div>
 </div>
-	<!-- <a href="#" class="register_button">모달 열기</a> -->
+	<a href="#" class="register_button">모달 열기</a>

@@ -50,7 +50,7 @@ a.link_to_list{font-size: 18px;}
 .uneditable-input{width:300px; height: 100px; overflow: scroll;}
 #agree{float:left; }
 .lable_box{float:left; width:300px; margin-left:4px;}
-h2.modal_title{font-size:16px; color:#fff; text-align:center;}
+h2.modal_title{font-size:16px; color:#000; text-align:center;}
 div.agree_doc{
 	width:300px; 
 	height:100px; 
@@ -59,15 +59,33 @@ div.agree_doc{
 	padding:4px; 
 	color:#000;
 }
-a.simplemodal-close{float: right; text-decoration: none;}
+div#register_form{
+	background-color:#eee;
+}
+//a.simplemodal-close{float: right; text-decoration: none;}
 
 /* Overlay */
-#simplemodal-overlay {background-color:#000;}
-
-/* Container */
-#simplemodal-container {height:600px; width:600px; color:#bbb; background-color:#444; border:4px solid #444; padding:12px;}
-#simplemodal-container .simplemodal-data {padding:8px;}
-#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
-#simplemodal-container a {color:#ddd;}
-#simplemodal-container a.modalCloseImg {background:url(images/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
-#simplemodal-container h3 {color:#84b8d9;}
+//#simplemodal-overlay {background-color:#000;}
+//
+///* Container */
+//#simplemodal-container {
+//	height:600px; 
+//	width:600px; 
+////	color:#bbb; 
+////	background-color:#444; 
+//	border:4px solid #444; 
+//	padding:12px;}
+//#simplemodal-container .simplemodal-data {padding:8px;}
+//#simplemodal-container code {
+////	background:#141414; 
+//	border-left:3px solid #65B43D; 
+//	color:#bbb; 
+//	display:block; 
+//	font-size:12px; 
+//	margin-bottom:12px; 
+//	padding:4px 6px 6px;
+//}
+//#simplemodal-container a {color:#ddd;}
+//#simplemodal-container a.modalCloseImg {
+//	background:url(images/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+//#simplemodal-container h3 {color:#84b8d9;}
