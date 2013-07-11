@@ -14,6 +14,12 @@ body{
 div.header{
 	background-color:#13284B;
 }
+.form-horizontal .control-label{width:100px;}
+.form-horizontal .controls{margin-left:120px;}
+div#slide_register_form{
+	display:none;
+	background-color:#eee;
+}
 h1.repang_title{
 	font-size: 36px;
 	margin: 0 0 0 0;
@@ -49,10 +55,10 @@ a.link_to_list{font-size: 18px;}
 #register_form {display:none;}
 .uneditable-input{width:300px; height: 100px; overflow: scroll;}
 #agree{float:left; }
-.lable_box{float:left; width:300px; margin-left:4px;}
-h2.modal_title{font-size:16px; color:#000; text-align:center;}
+.lable_box{float:left; width:200px; margin-left:4px;}
+h2.modal_title{font-size:16px; color:#000; margin-left:20px;}
 div.agree_doc{
-	width:300px; 
+	width:210px; 
 	height:100px; 
 	overflow: scroll; 
 	background-color:#fff; 

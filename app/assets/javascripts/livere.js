@@ -1,4 +1,5 @@
 function livere() {
-		$('#register_form').modal();
-		return false;
+	$('#slide_register_form').slideDown();
+	$("#user_name").focus();
+	return false;
 }

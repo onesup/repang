@@ -22,6 +22,7 @@
 		<% end %>
 	</div>
 	<%= link_to image_tag("list_menu.jpg"), events_path, :class => :link_to_list %>
+	<%= render "register_form" %>
 	<div id="register_form" data-event_id="<%= @event.id %>">
 		<a href="#" title="Close" class="modal-close simplemodal-close close">x</a>
 		<h2 class="modal_title">이벤트 당첨 시 경품배송을 위해 정확한 정보를 입력해주세요.</h2>
@@ -107,12 +108,12 @@
 								<p>귀하는 위와 같은 고유식별정보의 수집, 이용을 거부할 수 있습니다.
 								다만, 고유식별 정보의 필수적 수집 이용에 동의하지 않을 경우 이벤트 절차가 진행되지 않습니다.</p>
 							</div>
-				</div>
+						</div>
 					</div>
 					<div class="controls">
 						<input type="checkbox" id="agree_private_number" name="agree_private_number">
-							<div class="lable_box">
-								<lable for="agree_private_number">본인은 회사의 고유식별정보 수집 및 이용에 관한 설명을 모두 이해하였고, 모두 동의합니다.</lable>
+						<div class="lable_box">
+							<lable for="agree_private_number">본인은 회사의 고유식별정보 수집 및 이용에 관한 설명을 모두 이해하였고, 모두 동의합니다.</lable>
 						</div>
 					</div>
 				</div>
