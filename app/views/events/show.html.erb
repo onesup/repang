@@ -22,7 +22,7 @@
 		<% end %>
 	</div>
 	<%= link_to image_tag("list_menu.jpg"), events_path, :class => :link_to_list %>
-	<div id="register_form">
+	<div id="register_form" data-event_id="<%= @event.id %>">
 		<a href="#" title="Close" class="modal-close simplemodal-close close">x</a>
 		<h2 class="modal_title">이벤트 당첨 시 경품배송을 위해 정확한 정보를 입력해주세요.</h2>
 		<a name="register_form">		</a>
@@ -143,4 +143,4 @@
 		</script>
 	</div>
 </div>
-	<a href="#" class="register_button">모달 열기</a>
+	<!-- <a href="#" class="register_button">모달 열기</a> -->
