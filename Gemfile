@@ -23,7 +23,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 group :production do
-  gem 'rb-readline'
+  gem 'rb-readline', '~> 0.4.2'
 end
 gem 'jquery-rails'
 
